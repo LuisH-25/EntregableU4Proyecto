@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'portafolios',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://entregableu4-luishuanca-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://entregableu4proyecto-production.up.railway.app/']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
