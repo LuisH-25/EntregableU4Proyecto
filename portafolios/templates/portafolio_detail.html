@@ -1,32 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Detalle del Proyecto</h1>
-    {{error}}
-    <h2>{{portafolio.title}}</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button>
-            Update
-        </button>
 
-    </form>
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1 class="text-secondary">{{portafolio.title}}</h1>
 
-    <form action="{% url 'complete_portafolio' portafolio.id%}" method="POST">
-        {% csrf_token %}
-        <button>
-            Complete
-        </button>
+            {{error}}
+        
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
 
-    </form>
+            <div class="mt-5 d-flex">
+                <form action="{% url 'complete_portafolio' portafolio.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary">
+                        Terminar
+                    </button>
+                </form>
+            
+                <form action="{% url 'delete_portafolio' portafolio.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
 
-    <form action="{% url 'delete_portafolio' portafolio.id%}" method="POST">
-        {% csrf_token %}
-        <button>
-            Delete
-        </button>
-
-    </form>
-    
 {% endblock %}
+
