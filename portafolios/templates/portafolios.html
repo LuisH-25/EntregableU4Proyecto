@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <h1>Proyectos {{estado}}</h1>
+    <ul>
+        {% for portafolio in portafolios %}
+            <li>
+                {% if user.is_authenticated %}
+                <a href="{% url 'portafolio_detail' portafolio.id %}">
+                    {% if portafolio.private %}
+                        <strong>{{portafolio.title}}</strong>
+                    {% else %}
+                        {{portafolio.title}}
+                    {% endif%}
+                    
+                </a>
+                {% else%}
+                    <h3>{{portafolio.title}}</h3>
+                {% endif %}
+                
+                <p>{{portafolio.foto}}</p>
+                <p>{{portafolio.description}}</p>
+                <p>{{portafolio.user.username}}</p>
+                <p>{{portafolio.private}}</p>
+                <p>{{portafolio.datecompleted|date:'M j Y:i'}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

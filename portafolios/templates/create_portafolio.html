@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1>Crear proyecto</h1>
+    {{error}}
+    <form action="/portafolios/create/" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button>
+            Guardar
+        </button>
+    </form>
+{% endblock %}
