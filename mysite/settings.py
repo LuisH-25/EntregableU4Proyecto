@@ -77,25 +77,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-#mysql://root:ILhUEaLgCJmeWiJ3PKX8@containers-us-west-79.railway.app:6576/railway
-
 # DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'railway',
-#             'USER': 'root',
-#             'PASSWORD': 'ILhUEaLgCJmeWiJ3PKX8',
-#             'HOST': 'containers-us-west-79.railway.app',
-#             'PORT': '6576',
-#         }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# }
+
+#mysql://root:iqfmRpiBXU4qhPOdnmUz@containers-us-west-162.railway.app:6547/railway
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'railway',
+            'USER': 'root',
+            'PASSWORD': 'iqfmRpiBXU4qhPOdnmUz',
+            'HOST': 'containers-us-west-162.railway.app',
+            'PORT': '6547',
+        }
+    }
 
 
 # Password validation
@@ -120,9 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-pe'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
