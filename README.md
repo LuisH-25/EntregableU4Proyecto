@@ -17,3 +17,4 @@ Luis Enrique Huanca Champi
 - Se puede editar un portafolio haciendo click sobre el titulo
 
 ### Link de acceso:
+- https://entregableu4proyecto-production.up.railway.app/

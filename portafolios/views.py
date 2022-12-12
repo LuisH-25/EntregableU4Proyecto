@@ -47,18 +47,18 @@ def signup(request):
 def portafolios(request):
     #portafolios = Portafolio.objects.all()
     portafolios = Portafolio.objects.filter(user=request.user, datecompleted__isnull= True)
-    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"pendientes"})
+    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"pendientes", "mostrarDetalle":True})
 
 def portafolios_universal(request):
     portafolios = Portafolio.objects.filter(private = False)
     #portafolios = Portafolio.objects.filter(user=request.user, datecompleted__isnull= True)
-    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"universales"})
+    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"universales", "mostrarDetalle":False})
 
 @login_required
 def portafolios_completed(request):
     #portafolios = Portafolio.objects.all()
     portafolios = Portafolio.objects.filter(user=request.user, datecompleted__isnull= False).order_by("-datecompleted")
-    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"completados"})
+    return render(request, "portafolios.html", {"portafolios":portafolios, "estado":"completados", "mostrarDetalle":True})
 
 @login_required
 def create_portafolios(request):

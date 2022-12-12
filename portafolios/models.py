@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Portafolio(models.Model):
-    foto = models.CharField(max_length=200)
+    foto = models.CharField(max_length=400)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)  # si no pasa nada, por defecto estara vacio
     tags = models.CharField(max_length=200)

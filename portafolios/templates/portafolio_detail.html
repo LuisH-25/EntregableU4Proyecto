@@ -21,14 +21,14 @@
                 <form action="{% url 'complete_portafolio' portafolio.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-secondary">
-                        Terminar
+                        Terminar Proyecto
                     </button>
                 </form>
             
                 <form action="{% url 'delete_portafolio' portafolio.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-danger">
-                        Eliminar
+                        Eliminar Proyecto
                     </button>
                 </form>
             </div>
